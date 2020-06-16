@@ -1,34 +1,40 @@
 # DIFRINT
-This is a reference implementation of the softmax splatting operator, which has been proposed in Softmax Splatting for Video Frame Interpolation [1], using PyTorch. Softmax splatting is a well-motivated approach for differentiable forward warping. It uses a translational invariant importance metric to disambiguate cases where multiple source pixels map to the same target pixel. Should you be making use of our work, please cite our paper [1].
+This is the test code reference implementation of Deep Iterative Frame Interpolation for Full-frame Video Stabilization [1], using PyTorch.
+This work proposes a full-frame video stabilization method via frame interpolation techniques, making use of a self-supervised deep learning approach.
+Should you make use of our work, please cite our paper [1].
 
-<a href="https://arxiv.org/abs/2003.05534" rel="Paper"><img src="http://content.sniklaus.com/softsplat/paper.jpg" alt="Paper" width="100%"></a>
+<a href="https://dl.acm.org/doi/abs/10.1145/3363550" rel="ACM Digital Library"></a>
 
-## setup
-The softmax splatting is implemented in CUDA using CuPy, which is why CuPy is a required dependency. It can be installed using `pip install cupy` or alternatively using one of the provided binary packages as outlined in the CuPy repository.
+<a href="https://arxiv.org/abs/1909.02641" rel="Paper"><img src="http://content.sniklaus.com/softsplat/paper.jpg" alt="Paper" width="100%"></a>
 
-The provided example script is using OpenCV to load and display images, as well as to read the provided optical flow file. An easy way to install OpenCV for Python is using the `pip install opencv-contrib-python` package.
+## Setup
+We used the following python and package versions:
+`python>=3.5.6`
+`torch>=1.0.0`
+`cupy>=6.1.0`
+`pillow>=5.2.0`
+`numpy>=1.15.2`
+`opencv-contrib-python>=4.1.0.25`
+`CUDA>=9.0`
 
-## usage
-We provide a small script to replicate the third figure of our paper [1]. You can simply run `python run.py` to obtain the comparison between summation splatting, average splatting, linear splatting, and softmax splatting. Please see this exemplatory `run.py` for additional information on how to use the provided reference implementation of our proposed softmax splatting operator for differentiable forward warping.
+You may require to setup the correlation package for computing the cost volume module in PWC-Net.
+Please follow the instructions in <a href="https://github.com/vt-vl-lab/pwc-net.pytorch" rel="vt-vl-lab/pwc-net"></a>.
 
-## xiph
-In our paper, we propose to use 4K video clips from Xiph to evaluate video frame interpolation on high-resolution footage. Please see the supplementary `benchmark.py` on how to reproduce the shown metrics.
+## Usage
+You can run `python run_seq2.py --cuda --n_iter 3 --skip 2` to obtain example results on a sample given in the `data` folder, which will be saved in the `output` folder.
+By default, our experiments were done with 3 iterations and skip parameter of 2.
+This can be customized by adjusting the `--n_iter` and `--skip` options.
+We also provide code for making .avi videos from ourput frames, and a reference code for quality metrics.
 
-## video
-<a href="http://content.sniklaus.com/softsplat/video.mp4" rel="Video"><img src="http://content.sniklaus.com/softsplat/video.jpg" alt="Video" width="100%"></a>
+## Supplementary video
+<a href="https://youtu.be/qXi9NXOvIgM" rel="Video"></a>
 
 ## license
 The provided implementation is strictly for academic purposes only. Should you be interested in using our technology for any commercial use, please feel free to contact us.
 
-## references
+## References
 ```
-[1]  @inproceedings{Niklaus_CVPR_2020,
-         author = {Simon Niklaus and Feng Liu},
-         title = {Softmax Splatting for Video Frame Interpolation},
-         booktitle = {IEEE International Conference on Computer Vision},
-         year = {2020}
-     }
-	@article{Choi_TOG20,
+[1] @article{Choi_TOG20,
 	author = {Choi, Jinsoo and Kweon, In So},
 	title = {Deep Iterative Frame Interpolation for Full-Frame Video Stabilization},
 	year = {2020},
@@ -41,8 +47,5 @@ The provided implementation is strictly for academic purposes only. Should you b
 	journal = {ACM Transactions on Graphics},
 	articleno = {4},
 	numpages = {9},
-}
+	}
 ```
-
-## acknowledgment
-The video above uses materials under a Creative Common license as detailed at the end.
