@@ -1,4 +1,4 @@
-# DIFRINT
+# DIFRINT - TOG20/SIGGRAPH Asia19
 This is the test code reference implementation of Deep Iterative Frame Interpolation for Full-frame Video Stabilization [1], using PyTorch.
 This work proposes a full-frame video stabilization method via frame interpolation techniques, making use of a self-supervised deep learning approach.
 Should you make use of our work, please cite our paper [1].
