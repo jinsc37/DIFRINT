@@ -153,19 +153,7 @@ def metrics(in_src, out_src):
 	print(str.format('{0:.4f}',  (SS_t+SS_r)/2) +' | '+ str.format('{0:.4f}', SS_t) +' | '+ str.format('{0:.4f}', SS_r) )
 
 if __name__ == '__main__':
-	metrics(in_src='./data/Stab_te_reg/00/', out_src='./output/OurStabReg3/00/')
-	#metrics(in_src='./data/Stab_te_reg/05/', out_src='./output/Liu2013Bundle/05/')
-	#metrics(in_src='./data/Stab_te_reg/00/', out_src='./output/Wang2018Stabnet_Reg/00/')
+	metrics(in_src='./data/Stab_te_reg/07/', out_src='./output/OurStabReg2/07/')
 
-	#metrics(in_src='./output/FullFrame/originalIM/05/', out_src='./output/FullFrame/outputIM/05/')
-	#metrics(in_src='./output/FullFrame/originalIM/05/', out_src='./output/FullFrame/ourIM/05/')
-
-	#metrics(in_src='./data/unstableIM/01/', out_src='./output/01/')
-
-	#metrics(in_src='./data/Stab_te_reg/05/', out_src='./output/Adobe_vid/05/')
-	#metrics(in_src='./data/Stab_te_crowd/01/', out_src='./output/Adobe_vid/crowd/01/')
-
-	#metrics(in_src='./data/Stab_te_reg/05/', out_src='./output/L1/05/')
-	#metrics(in_src='./data/Stab_te_zoom/02/', out_src='./output/L1/zoom/02/')
 
 

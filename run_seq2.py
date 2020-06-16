@@ -84,26 +84,19 @@ for num_iter in range(opt.n_iter):
 			#end
 
 			fr_g1 = torch.cuda.FloatTensor(np.array(Image.open(opt.out_file + f[:-9] + '%05d.png' % (int(f[-9:-4])-skip))).transpose(2, 0, 1).astype(np.float32)[None,:,:,:] / 255.0)
-			#fr_g1 = torch.cuda.FloatTensor(np.array(Image.open(src + f[:-9] + '%05d.png' % (int(f[-9:-4])-skip))).transpose(2, 0, 1).astype(np.float32)[None,:,:,:] / 255.0)
 			#fr_g2 = torch.cuda.FloatTensor(np.array(Image.open(src + f)).transpose(2, 0, 1).astype(np.float32)[None,:,:,:] / 255.0)
 			fr_g3 = torch.cuda.FloatTensor(np.array(Image.open(src + f[:-9] + '%05d.png' % (int(f[-9:-4])+skip))).transpose(2, 0, 1).astype(np.float32)[None,:,:,:] / 255.0)
 
 			#fr_o1 = torch.cuda.FloatTensor(np.array(Image.open(opt.in_file + f[:-9] + '%05d.png' % (int(f[-9:-4])-skip))).transpose(2, 0, 1).astype(np.float32)[None,:,:,:] / 255.0)
 			fr_o2 = torch.cuda.FloatTensor(np.array(Image.open(opt.in_file + f)).transpose(2, 0, 1).astype(np.float32)[None,:,:,:] / 255.0)
-			#fr_o2 = torch.cuda.FloatTensor(np.array(Image.open(src + f)).transpose(2, 0, 1).astype(np.float32)[None,:,:,:] / 255.0)
 			#fr_o3 = torch.cuda.FloatTensor(np.array(Image.open(opt.in_file + f[:-9] + '%05d.png' % (int(f[-9:-4])+skip))).transpose(2, 0, 1).astype(np.float32)[None,:,:,:] / 255.0)
 
 			with torch.no_grad():
-				#tik = time.time()
-
 				fhat, I_int = DIFNet(fr_g1, fr_g3, fr_o2, fr_g3, fr_g1, 0.5) # Notice 0.5
 
-				#tok = time.time()
-				#print(tok-tik)
-
 			# Save image
-			img = Image.fromarray(np.uint8(fhat.cpu().squeeze().permute(1,2,0)*255))
-			img.save(opt.out_file + f)
+			#img = Image.fromarray(np.uint8(fhat.cpu().squeeze().permute(1,2,0)*255))
+			#img.save(opt.out_file + f)
 
 			sys.stdout.write('\rFrame: ' + str(idx) + '/' + str(len(frameList)-2))
 			sys.stdout.flush()
@@ -111,13 +104,11 @@ for num_iter in range(opt.n_iter):
 			idx += 1
 		#end
 	#end
-	#print('\nMaking video...')
-	#frame2vid(src=opt.out_file, vidDir=opt.out_file[:-1] + '_'+str(num_iter+1)+'_'+str(opt.skip) + '.avi')
 #end
 
 ### Make video
-print('\nMaking video...')
-frame2vid(src=opt.out_file, vidDir=opt.out_file[:-1] + '.avi')
+#print('\nMaking video...')
+#frame2vid(src=opt.out_file, vidDir=opt.out_file[:-1] + '.avi')
 
 ### Assess with metrics
 #print('\nComputing metrics...')
