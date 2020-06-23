@@ -27,8 +27,9 @@ This can be customized by adjusting the `--n_iter` and `--skip` options.
 We also provide code for making .avi videos from output frames, and a reference code for quality metrics.
 
 ## Supplementary video
-Please refer to the supplementary <a href="https://youtu.be/qXi9NXOvIgM">video</a>.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qXi9NXOvIgM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Please refer to the supplementary video provided below (click thumbnail):
+<a href="https://youtu.be/qXi9NXOvIgM" rel="Video"><img src="http://img.youtube.com/vi/qXi9NXOvIgM/0.jpg" alt="Video" width="50%"></a>
+
 
 ## References
 ```
