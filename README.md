@@ -14,8 +14,8 @@ We used the following python and package versions:
 `pillow==5.2.0`
 `numpy==1.15.2`
 `matplotlib==3.0.0`
-`pypng=0.0.20`
-`opencv-contrib-python>=4.1.0.25`
+`pypng==0.0.20`
+`opencv-contrib-python==4.1.0.25`
 `CUDA==9.0`
 
 You may require to setup the correlation package for computing the cost volume module in PWC-Net.
