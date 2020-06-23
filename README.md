@@ -7,6 +7,7 @@ Our paper can be found in the <a href="https://dl.acm.org/doi/abs/10.1145/336355
 
 ## Setup
 We used the following python and package versions:
+
 `python==3.5.6`
 `torch==1.0.0`
 `cupy==4.1.0`
@@ -22,12 +23,15 @@ If required, please follow the instructions in <a href="https://github.com/vt-vl
 
 ## Usage
 You can run `python run_seq2.py --cuda --n_iter 3 --skip 2` to obtain example results on a sample given in the `data` folder, which will be saved in the `output` folder.
+
 By default, our experiments were done with 3 iterations and skip parameter of 2.
 This can be customized by adjusting the `--n_iter` and `--skip` options.
+
 We also provide code for making .avi videos from output frames, and a reference code for quality metrics.
 
 ## Supplementary video
 Please refer to the supplementary video provided below (click thumbnail):
+
 <a href="https://youtu.be/qXi9NXOvIgM" rel="Video"><img src="http://img.youtube.com/vi/qXi9NXOvIgM/0.jpg" alt="Video" width="50%"></a>
 
 
@@ -51,4 +55,4 @@ Please refer to the supplementary video provided below (click thumbnail):
 
 ## License
 The provided implementation is strictly for academic purposes only. 
-Should you be interested in using our technology for any commercial use, please feel free to contact us.
+Should you be interested in using our technology for any commercial use, please contact us.
