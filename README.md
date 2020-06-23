@@ -7,13 +7,15 @@ Our paper can be found in the <a href="https://dl.acm.org/doi/abs/10.1145/336355
 
 ## Setup
 We used the following python and package versions:
-`python>=3.5.6`
-`torch>=1.0.0`
-`cupy>=6.1.0`
-`pillow>=5.2.0`
-`numpy>=1.15.2`
+`python==3.5.6`
+`torch==1.0.0`
+`cupy==4.1.0`
+`pillow==5.2.0`
+`numpy==1.15.2`
+`matplotlib==3.0.0`
+`pypng=0.0.20`
 `opencv-contrib-python>=4.1.0.25`
-`CUDA>=9.0`
+`CUDA==9.0`
 
 You may require to setup the correlation package for computing the cost volume module in PWC-Net.
 If required, please follow the instructions in <a href="https://github.com/vt-vl-lab/pwc-net.pytorch">vt-vl-lab/pwc-net</a>.
